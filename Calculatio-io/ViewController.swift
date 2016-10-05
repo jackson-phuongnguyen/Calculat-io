@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
         if percList.count == 0 {
             percList = [0.1, 0.15, 0.2]
             defaults.setValue(percList, forKey: "percentageList")
+            calculateTip(self)
         } else {
             for (index, value) in percList.enumerated() {
                 tipControl.setTitle("\(String(format:"%.0f",value*100))%", forSegmentAt: index)
@@ -60,27 +62,58 @@ class ViewController: UIViewController {
         }
     }
 
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("view did dissapear")
     }
 
-    @IBAction func onTap(_ sender: AnyObject) {
+    @IBAction func onFinishEditing(_ sender: AnyObject) {
         print("Hello2")
+        billField.text = getCurrency(amount: Double(billField.text!) ?? 0)
+    }
+    
+    @IBAction func onTap(_ sender: AnyObject) {
         view.endEditing(true)
     }
     
     @IBAction func calculateTip(_ sender: AnyObject) {
-        let billAmt = Double(billField.text!) ?? 0
+        let billAmt = getDouble(amount: billField.text!, CurrencyOrPercetage: "C")
         let tipAmt = billAmt * percList[tipControl.selectedSegmentIndex]
         let totalAmt = billAmt + tipAmt
         
         
-        tipLabel.text = String(format: "$%.2f", tipAmt)
-        totalLabel.text = String(format: "$%.2f", totalAmt)
+        tipLabel.text = getCurrency(amount: tipAmt)
+        totalLabel.text = getCurrency(amount: totalAmt)
+        print(getCurrency(amount: totalAmt))
+    }
+    
+    public func getCurrency (amount: Double) -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = NSLocale.current
+        
+        let input = amount as NSNumber
+        let output = currencyFormatter.string(from: input)
+        return output!
+    }
+    
+    public func getDouble (amount: String, CurrencyOrPercetage: String) -> Double {
+        let doubleFormatter = NumberFormatter()
+        var output = Double()
+        
+        if (amount == "" || amount == ".") {
+            output = 0.0
+        } else if (Double(amount) ?? -1) != -1 {
+            output = Double(amount)!
+        } else if CurrencyOrPercetage == "P" {
+            doubleFormatter.numberStyle = .percent
+            output = doubleFormatter.number(from: amount) as! Double
+        } else if CurrencyOrPercetage == "C" {
+            doubleFormatter.numberStyle = .currency
+            doubleFormatter.locale = NSLocale.current
+            
+            output = doubleFormatter.number(from: amount) as! Double
+        }
+        return output
     }
 }
-
-
-
