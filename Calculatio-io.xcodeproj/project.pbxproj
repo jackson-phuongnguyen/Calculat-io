@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE8FF1981DA4BC25000749DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8FF1971DA4BC25000749DB /* SettingsViewController.swift */; };
 		CEBECEBF1DA4A0710037BE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBECEBE1DA4A0710037BE92 /* AppDelegate.swift */; };
 		CEBECEC11DA4A0710037BE92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBECEC01DA4A0710037BE92 /* ViewController.swift */; };
 		CEBECEC41DA4A0710037BE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBECEC21DA4A0710037BE92 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE8FF1971DA4BC25000749DB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "Calculatio-io/SettingsViewController.swift"; sourceTree = "<group>"; };
 		CEBECEBB1DA4A0710037BE92 /* Calculatio-io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calculatio-io.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBECEBE1DA4A0710037BE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBECEC01DA4A0710037BE92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		CEBECEB21DA4A0710037BE92 = {
 			isa = PBXGroup;
 			children = (
+				CE8FF1971DA4BC25000749DB /* SettingsViewController.swift */,
 				CEBECEBD1DA4A0710037BE92 /* Calculatio-io */,
 				CEBECED51DA4A0710037BE92 /* Calculatio-ioTests */,
 				CEBECEE01DA4A0710037BE92 /* Calculatio-ioUITests */,
@@ -196,7 +199,7 @@
 				TargetAttributes = {
 					CEBECEBA1DA4A0710037BE92 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					CEBECED11DA4A0710037BE92 = {
 						CreatedOnToolsVersion = 8.0;
@@ -265,6 +268,7 @@
 				CEBECEC71DA4A0710037BE92 /* Calculatio_io.xcdatamodeld in Sources */,
 				CEBECEC11DA4A0710037BE92 /* ViewController.swift in Sources */,
 				CEBECEBF1DA4A0710037BE92 /* AppDelegate.swift in Sources */,
+				CE8FF1981DA4BC25000749DB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Calculatio-io/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jacksonNG.Calculatio-io";
@@ -426,6 +431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Calculatio-io/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jacksonNG.Calculatio-io";
@@ -507,6 +513,7 @@
 				CEBECEE81DA4A0710037BE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEBECEE91DA4A0710037BE92 /* Build configuration list for PBXNativeTarget "Calculatio-ioTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				CEBECEEB1DA4A0710037BE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEBECEEC1DA4A0710037BE92 /* Build configuration list for PBXNativeTarget "Calculatio-ioUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +531,7 @@
 				CEBECEEE1DA4A0710037BE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
